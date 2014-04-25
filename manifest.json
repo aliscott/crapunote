@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "Crapunote",
+  "description": "Makes Acunote less crappy",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.acunote.com/projects/*/sprints/*/show"],
+      "js": ["js/jquery.min.js", "js/crapunote.js"]
+    }
+  ]
+}
