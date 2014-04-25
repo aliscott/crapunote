@@ -69,11 +69,17 @@
     }
   }
 
-  $(document).ready(function() {
+  function setupExpandAnchors() {
     collapseAll();
     addExpandAllAnchors();
     $(storyRowSelector).each(function(i, tr) {
-      addExpandAnchor(tr);
+      if ($(tr).nextUntil(storyRowSelector, taskRowSelector).length > 0) {
+        addExpandAnchor(tr);
+      }
     });
+  }
+
+  $(document).ready(function() {
+    setupExpandAnchors();
   });
 })(jQuery);
